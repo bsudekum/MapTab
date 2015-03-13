@@ -1,0 +1,19 @@
+{
+  "name": "mapbox-browserify-template",
+  "version": "0.0.0",
+  "description": "A template for creating browserify Mapbox apps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bobby Sudekum",
+  "license": "ISC",
+  "dependencies": {
+    "browserify": "^7.0.0",
+    "corslite": "0.0.6",
+    "mapbox.js": "^2.1.5"
+  },
+  "devDependencies": {
+    "uglify-js": ">=1.1.0"
+  }
+}

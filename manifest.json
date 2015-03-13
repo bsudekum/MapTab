@@ -1,0 +1,20 @@
+{
+  "name": "Blank new tab page",
+  "description": "Override the new tab page with a blank one",
+  "version": "0.2",
+  "incognito": "split",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "content_security_policy": "script-src 'self' https://wwww.mapbox.com/*; object-src 'self'",
+  "permissions": [
+    "geolocation",
+    "cookies",
+    "<all_urls>",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["assets/site.js"]
+  },
+  "manifest_version": 2
+}
