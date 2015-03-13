@@ -1,7 +1,7 @@
 {
-  "name": "Blank new tab page",
-  "description": "Override the new tab page with a blank one",
-  "version": "0.2",
+  "name": "MapTab",
+  "description": "A new tab Chrome extension",
+  "version": "0.1",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"
