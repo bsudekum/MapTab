@@ -14,8 +14,9 @@ L.mapbox.accessToken = 'pk.eyJ1IjoiYm9iYnlzdWQiLCJhIjoiTi16MElIUSJ9.Clrqck--7WmH
 
 var geocoder = L.mapbox.geocoder('mapbox.places');
 var map = L.mapbox.map('map', 'bobbysud.79c006a5', {
-    zoomControl: false
+    zoomControl: false,
 });
+map.setMaxBounds([[90, -180], [-90, 180]]);
 
 chrome.cookies.get({
     url: 'http://maptab.com',
