@@ -1,6 +1,7 @@
 {
   "name": "MapTab",
-  "description": "A new tab Chrome extension",
+  "description": "A tab extension for viewing your current location, time and weather.",
+  "shortname": "MapTab",
   "version": "0.1",
   "incognito": "split",
   "chrome_url_overrides": {
@@ -17,9 +18,9 @@
     "scripts": ["assets/site.js"]
   },
   "icons": {
-    "16": "16.png",
-    "48": "48.png",
-    "128": "128.png"
+    "16": "assets/images/icon16.png",
+    "48": "assets/images/icon48.png",
+    "128": "assets/images/icon128.png"
   },
   "manifest_version": 2
 }

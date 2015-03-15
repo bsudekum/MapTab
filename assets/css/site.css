@@ -9,9 +9,9 @@ body {
     width: 100%;
 }
 .vingette {
-    -webkit-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.4);
+    /*-webkit-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.4);
     -moz-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0px 0px 100px #000;
+    box-shadow: inset 0px 0px 100px #000;*/
     position: absolute;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@ body {
     color: #FFF;
     text-align: center;
     width: 100%;
-    height: 100px;
+    height: 80px;
     position: absolute;
     top: -300px;
     bottom: 0;
@@ -52,14 +52,41 @@ ul a {
 .grey {
     color: #CFCFCF;
 }
-.pill > * {
+#weather.pill > * {
     border: none;
     margin-left: 60px;
 }
 #weather {
     margin-right: 60px;
 }
-
 .pad5 {
     padding: 5px;
+}
+.modal {
+    width: 100%;
+    height: 430px;
+    position: absolute;
+    top: -150px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1000000;
+    width: 500px;
+    display: none;
+}
+.modal.active {
+    display: block;
+}
+#show-settings {
+    z-index: 100000;
+}
+.leaflet-fade-anim .leaflet-popup, .leaflet-fade-anim .leaflet-tile {
+     transition: opacity .1s linear;
+}
+h1.fancy {
+    font-size: 90px;
+}
+h2 {
+    font-size: 30px;
 }

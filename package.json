@@ -11,6 +11,10 @@
   "dependencies": {
     "browserify": "^7.0.0",
     "corslite": "0.0.6",
-    "mapbox.js": "^2.1.5"
+    "form-serialize": "^0.6.0",
+    "jquery-browserify": "^1.8.1",
+    "mapbox.js": "^2.1.5",
+    "smash": "0.0.14",
+    "uglify-js": ">=1.1.0"
   }
 }

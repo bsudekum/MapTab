@@ -12,14 +12,51 @@
 </head>
 
 <body>
+    <div class='modal pad4 fill-white keyline-all round' id='settings'>
+        <a href='#' class='pin-right icon close pad1 row1' id='close'></a>
+        <h3 class='space-bottom2'>Settings</h3>
+        <form id='form-settings'>
+            <fieldset>
+                <label>Initial Position</label>
+                <div class='radio-pill pill clearfix col12'>
+                    <input type='radio' name='loc' value='user-loc' id='user-loc' checked>
+                    <label for='user-loc' class='col4 button icon check'>User location</label>
+                    <input type='radio' name='loc' value='last-pos' id='last-pos'>
+                    <label for='last-pos' class='col4 button icon check'>Last Position</label>
+                    <input type='radio' name='loc' value='random' id='random'>
+                    <label for='random' class='col4 button icon check'>Random</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label>Map Type</label>
+                <div id='layers' class='radio-pill pill clearfix col12'>
+                    <input type='radio' name='map' value='sat' id='sat' checked>
+                    <label for='sat' class='col3 button icon check'>Satellite</label>
+                    <input type='radio' name='map' value='streets' id='streets'>
+                    <label for='streets' class='col3 button icon check'>Streets</label>
+                    <input type='radio' name='map' value='random-map' id='random-map'>
+                    <label for='random-map' class='col3 button icon check'>Random</label>
+                    <input type='radio' name='map' value='custom' id='custom'>
+                    <label for='custom' class='col3 button icon check'>Custom</label>
+                </div>
+            </fieldset>
+            <fieldset>
+                <label for='custom-mapid' class='quiet'>Custom <a href='https://mapbox.com' target='_blank'>Mapbox</a> mapid or <a id='save-current' href='#'>save current</a></label>
+                <input type='text' value='' class='col6' name='custom-mapid' id='custom-mapid' disabled placeholder="Enable 'Custom' to edit" />
+            </fieldset>
+            <hr>
+            <input type='submit' value='Save Changes' name='' id='save' disabled />
+        </form>
+    </div>
+    <a href='#' id='show-settings' class='icon sprocket pin-right pad2 row2'></a>
     <div class='vingette fancy shadow'>
         <div class='info shadow'>
-            <h1 class='fancy' id='time'></h1>
-            <h3 class='fancy' id='date'></h3>
+            <h1 class='fancy space-bottom1' id='time'></h1>
+            <h2 id='date'></h2>
         </div>
         <div class='pin-bottom center pad4y dark pad4'>
-          <ul id='weather' class='pill pad4y'></ul>
-          <h4 id='location'></h4>
+            <ul id='weather' class='pill pad4y'></ul>
+            <h3 id='location'></h3>
         </div>
     </div>
     <div id='map'></div>
