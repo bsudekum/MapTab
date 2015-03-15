@@ -66,17 +66,19 @@ ul a {
     width: 100%;
     height: 430px;
     position: absolute;
-    top: -150px;
+    top: -300px;
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
     z-index: 1000000;
     width: 500px;
-    display: none;
+    transform: translate(0,-500px);
+    transition: all .3s;
+    transition-timing-function: ease-in-out;
 }
 .modal.active {
-    display: block;
+    transform: translate(0,100px);
 }
 #show-settings {
     z-index: 100000;
@@ -89,4 +91,7 @@ h1.fancy {
 }
 h2 {
     font-size: 30px;
+}
+.space-right1 {
+    margin-right: 5px;
 }

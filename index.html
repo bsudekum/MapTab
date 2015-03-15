@@ -19,9 +19,9 @@
             <fieldset>
                 <label>Initial Position</label>
                 <div class='radio-pill pill clearfix col12'>
-                    <input type='radio' name='loc' value='user-loc' id='user-loc' checked>
+                    <input type='radio' class='stroked' name='loc' value='user-loc' id='user-loc' checked>
                     <label for='user-loc' class='col4 button icon check'>User location</label>
-                    <input type='radio' name='loc' value='last-pos' id='last-pos'>
+                    <input type='radio' name='loc' class='stroked' value='last-pos' id='last-pos'>
                     <label for='last-pos' class='col4 button icon check'>Last Position</label>
                     <input type='radio' name='loc' value='random' id='random'>
                     <label for='random' class='col4 button icon check'>Random</label>
@@ -41,11 +41,16 @@
                 </div>
             </fieldset>
             <fieldset>
-                <label for='custom-mapid' class='quiet'>Custom <a href='https://mapbox.com' target='_blank'>Mapbox</a> mapid or <a id='save-current' href='#'>save current</a></label>
+                <label for='custom-mapid' class='quiet'>Custom <a href='https://mapbox.com' target='_blank'>Mapbox</a> mapid or <a id='save-current' href='#'>save current</a>
+                </label>
                 <input type='text' value='' class='col6' name='custom-mapid' id='custom-mapid' disabled placeholder="Enable 'Custom' to edit" />
             </fieldset>
             <hr>
-            <input type='submit' value='Save Changes' name='' id='save' disabled />
+            <input type='submit' class='fl' value='Save Changes' name='' id='save' disabled />
+            <span class='fr micro quiet pad1y icon mail'>
+                <a href='https://chrome.google.com/webstore/detail/maptab/dmabflbokojjfjicmbjjfnmodihciemo' class='quiet space-right1' target='_blank'>Share</a>
+                <a href='https://github.com/bsudekum/MapTab' target='_blank' class='icon github quiet'>Fork</a>
+            </span>
         </form>
     </div>
     <a href='#' id='show-settings' class='icon sprocket pin-right pad2 row2'></a>
@@ -56,7 +61,7 @@
         </div>
         <div class='pin-bottom center pad4y dark pad4'>
             <ul id='weather' class='pill pad4y'></ul>
-            <h3 id='location'></h3>
+            <h3 id='location' class='margin4 col4'></h3>
         </div>
     </div>
     <div id='map'></div>

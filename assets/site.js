@@ -115,6 +115,9 @@ module.exports = [{
 }, {
     'name': 'High Contrast',
     'id': 'bobbysud.lff26ajh'
+}, {
+    'name': 'Satellite',
+    'id': 'bobbysud.79c006a5'
 }];
 
 },{}],4:[function(require,module,exports){
@@ -1797,6 +1800,7 @@ module.exports = function() {
         }
         util.setCookie('settings', settings);
         showHide();
+        location.reload();
     });
 
     util.getCookie('settings', function(set) {
