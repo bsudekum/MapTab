@@ -9,9 +9,6 @@ body {
     width: 100%;
 }
 .vingette {
-    /*-webkit-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.4);
-    -moz-box-shadow: inset 0px 0px 85px rgba(0, 0, 0, 0.4);
-    box-shadow: inset 0px 0px 100px #000;*/
     position: absolute;
     top: 0;
     left: 0;
@@ -32,8 +29,14 @@ body {
     right: 0;
     margin: auto;
 }
-.shadow {
-    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+.shadow1 {
+    text-shadow: 0px 0px 1px #000;
+}
+.shadow2 {
+    text-shadow: 0px 0px 1px #000, 0px 0px 2px rgba(0, 0, 0, .5);
+}
+.shadow3 {
+    text-shadow: 0px 0px 1px #000, 0px 0px 2px rgba(0, 0, 0, .5), 0px 0px 3px rgba(0, 0, 0, .25);
 }
 ul {
     margin: 0;
@@ -73,8 +76,8 @@ ul a {
     margin: auto;
     z-index: 1000000;
     width: 500px;
-    transform: translate(0,-500px);
-    transition: all .3s;
+    transform: translate(0,-5000px);
+    transition: all .4s;
     transition-timing-function: ease-in-out;
 }
 .modal.active {
@@ -87,11 +90,17 @@ ul a {
      transition: opacity .1s linear;
 }
 h1.fancy {
-    font-size: 90px;
+    font-size: 100px;
 }
 h2 {
-    font-size: 30px;
+    font-size: 40px;
 }
+
 .space-right1 {
     margin-right: 5px;
+}
+#location {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 20px;
 }

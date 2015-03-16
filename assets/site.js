@@ -14,21 +14,29 @@ module.exports = function() {
     var geocoder = L.mapbox.geocoder('mapbox.places');
 
     util.getCookie('settings', function(set) {
-        var settings = JSON.parse(set.value)
-        if (settings.map === 'random-map') {
-            var index = Math.floor(Math.random() * mapids.length - 1) + 1;
-            var mapid = mapids[index].id;
-            document.getElementById('save-current').addEventListener('click', function() {
-                document.getElementById('save').removeAttribute('disabled');
-                document.getElementById('custom').checked = 'checked';
-                document.getElementById('custom-mapid').value = mapid;
-            });
-        } else if (settings.map === 'sat') {
+        if (!set) {
             var mapid = 'bobbysud.79c006a5';
-        } else if (settings.map === 'streets') {
-            var mapid = 'bobbysud.j1o8j5bd';
-        } else if (settings.map === 'custom') {
-            var mapid = document.getElementById('custom-mapid').value;
+        } else {
+            var settings = JSON.parse(set.value)
+            if (settings.map === 'random-map') {
+                var index = Math.floor(Math.random() * mapids.length - 1) + 1;
+                var mapid = mapids[index].id;
+                if (mapids[index].color) {
+                    document.getElementsByClassName('color')[0].style.color = mapids[index].color;
+                    document.getElementsByClassName('color')[1].style.color = mapids[index].color;
+                }
+                document.getElementById('save-current').addEventListener('click', function() {
+                    document.getElementById('save').removeAttribute('disabled');
+                    document.getElementById('custom').checked = 'checked';
+                    document.getElementById('custom-mapid').value = mapid;
+                });
+            } else if (settings.map === 'sat') {
+                var mapid = 'bobbysud.79c006a5';
+            } else if (settings.map === 'streets') {
+                var mapid = 'bobbysud.j1o8j5bd';
+            } else if (settings.map === 'custom') {
+                var mapid = document.getElementById('custom-mapid').value;
+            }
         }
         var map = L.mapbox.map('map', mapid, {
             zoomControl: false,
@@ -52,7 +60,14 @@ module.exports = function() {
         function geocode() {
             geocoder.reverseQuery(map.getCenter(), function(err, data) {
                 if (err) return;
-                document.getElementById('location').innerHTML = data.features[0].place_name;
+                if (data.features[0].place_name.split(',').length === 4) {
+                    var name = data.features[0].place_name.split(',')[0] + ', '+ data.features[0].place_name.split(',')[2] +', '+ data.features[0].place_name.split(',')[3];
+                } else if (data.features[0].place_name.split(',').length === 5) {
+                    var name = data.features[0].place_name.split(',')[1] + ', '+ data.features[0].place_name.split(',')[3] +', '+ data.features[0].place_name.split(',')[4];
+                } else {
+                    var name = data.features[0].place_name;
+                }
+                document.getElementById('location').innerHTML = name;
             });
         }
 
@@ -87,7 +102,8 @@ module.exports = function() {
 },{"./mapids":3,"./places":4,"./util":6,"./weather":7,"mapbox.js":22}],3:[function(require,module,exports){
 module.exports = [{
     'name': 'Light',
-    'id': 'bobbysud.lff2hlb7'
+    'id': 'bobbysud.lff2hlb7',
+    'color': '#3A3A3A'
 }, {
     'name': 'Dark',
     'id': 'bobbysud.lff1p11d'
@@ -1804,6 +1820,7 @@ module.exports = function() {
     });
 
     util.getCookie('settings', function(set) {
+        if(!set) return false;
         var settings = JSON.parse(set.value);
         for (var k in settings) {
             if (settings.hasOwnProperty(k)) {
