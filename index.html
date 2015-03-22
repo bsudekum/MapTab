@@ -5,10 +5,9 @@
     <meta charset='utf-8' />
     <title>New Tab</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
-    <link rel='stylesheet' href='https://www.mapbox.com/base/latest/base.css'>
+    <link rel='stylesheet' href='assets/css/base.css' />
     <link rel='stylesheet' href='assets/css/mapbox.css' />
     <link rel='stylesheet' href='assets/css/site.css'>
-    <link rel='stylesheet' href='assets/css/weather-icons.css'>
 </head>
 
 <body>
@@ -19,12 +18,12 @@
             <fieldset>
                 <label>Initial Position</label>
                 <div class='radio-pill pill clearfix col12'>
-                    <input type='radio' class='stroked' name='loc' value='user-loc' id='user-loc' checked>
+                    <input type='radio' class='stroked' name='loc' value='user-loc' id='user-loc'>
                     <label for='user-loc' class='col4 button icon check'>User location</label>
                     <input type='radio' name='loc' class='stroked' value='last-pos' id='last-pos'>
                     <label for='last-pos' class='col4 button icon check'>Last Position</label>
                     <input type='radio' name='loc' value='random' id='random'>
-                    <label for='random' class='col4 button icon check'>Random</label>
+                    <label for='random' class='col4 button icon check' checked>Random</label>
                 </div>
             </fieldset>
             <fieldset>
@@ -45,7 +44,16 @@
                 </label>
                 <input type='text' value='' class='col6' name='custom-mapid' id='custom-mapid' disabled placeholder="Enable 'Custom' to edit" />
             </fieldset>
-            <hr>
+            <!-- <fieldset>
+                <label>Units</label>
+                <div id='units' class='radio-pill pill clearfix col12'>
+                    <input type='radio' name='units' value='imperial' id='imperial' checked>
+                    <label for='imperial' class='col3 button icon check'>F&#xb0;</label>
+                    <input type='radio' name='units' value='metric' id='metric'>
+                    <label for='metric' class='col3 button icon check'>C&#xb0;</label>
+                </div>
+            </fieldset>
+            <hr> -->
             <input type='submit' class='fl' value='Save Changes' name='' id='save' disabled />
             <span class='fr micro quiet pad1y icon mail'>
                 <a href='https://chrome.google.com/webstore/detail/maptab/dmabflbokojjfjicmbjjfnmodihciemo' class='quiet space-right1' target='_blank'>Share</a>
@@ -53,15 +61,15 @@
             </span>
         </form>
     </div>
-    <a href='#' id='show-settings' class='icon sprocket pin-right pad2 row2 quiet'></a>
+    <a href='#' id='show-settings' class='icon sprocket pin-right pad2 row2'></a>
     <div class='vingette fancy'>
         <div class='info shadow color'>
-            <h1 class='fancy space-bottom1 shadow3' id='time'></h1>
-            <h2 class='shadow2' id='date'></h2>
+            <h1 class='fancy space-bottom2 shadow3' id='time'></h1>
+            <h2 class='shadow3 pad2' id='date'></h2>
         </div>
         <div class='pin-bottom center pad4y dark pad4 color'>
-            <ul id='weather' class='pill pad4y'></ul>
-            <h3 id='location' class='shadow1 margin4 col4'></h3>
+            <ul id='weather' class='shadow1 pill pad4y'></ul>
+            <h3 id='location' class='shadow3 margin4 col4'></h3>
         </div>
     </div>
     <div id='map'></div>

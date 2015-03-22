@@ -4,17 +4,26 @@
   "description": "A new tab Chrome extension",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "watchify index.js -o assets/site.js & serve",
+    "build": "NODE_ENV=production browserify index.js -o | uglifyjs -c -m > assets/site.js"
   },
   "author": "Bobby Sudekum",
   "license": "ISC",
   "dependencies": {
-    "browserify": "^7.0.0",
     "corslite": "0.0.6",
     "form-serialize": "^0.6.0",
+    "gazetteer": "^0.1.4",
     "jquery-browserify": "^1.8.1",
     "mapbox.js": "^2.1.5",
+    "mapbox-base-css": "https://mapbox-npm.s3.amazonaws.com/package/mapbox-base-css-0.0.1-0da0e3fdcc65a37b6c3a9d1746a0f2f91cfd021a.tgz"
+  },
+  "devDependencies": {
+    "browserify": "^7.0.3",
+    "serve": "^1.4.0",
+    "tape": "^3.0.3",
+    "uglify-js": "^2.4.16",
     "smash": "0.0.14",
-    "uglify-js": ">=1.1.0"
+    "watchify": "^2.2.1"
   }
 }
