@@ -70,14 +70,14 @@ ul a {
     width: 100%;
     height: 430px;
     position: absolute;
-    top: -300px;
+    /*top: -300px;*/
     bottom: 0;
     left: 0;
     right: 0;
     margin: auto;
     z-index: 1000000;
     width: 500px;
-    transform: translate(0, -5000px);
+    /*transform: translate(0, -5000px);*/
     transition: all .4s;
     transition-timing-function: ease-in-out;
 }
