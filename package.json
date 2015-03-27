@@ -1,6 +1,6 @@
 {
   "name": "MapTab",
-  "version": "0.0.1",
+  "version": "0.0.8",
   "description": "A new tab Chrome extension",
   "main": "index.js",
   "scripts": {
@@ -11,12 +11,10 @@
   "author": "Bobby Sudekum",
   "license": "ISC",
   "dependencies": {
-    "corslite": "0.0.6",
     "form-serialize": "^0.6.0",
     "gazetteer": "^0.1.4",
     "jquery-browserify": "^1.8.1",
-    "mapbox.js": "^2.1.5",
-    "mapbox-base-css": "https://mapbox-npm.s3.amazonaws.com/package/mapbox-base-css-0.0.1-0da0e3fdcc65a37b6c3a9d1746a0f2f91cfd021a.tgz"
+    "mapbox.js": "^2.1.5"
   },
   "devDependencies": {
     "browserify": "^7.0.3",
