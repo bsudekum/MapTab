@@ -1,11 +1,12 @@
 {
   "name": "MapTab",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A new tab Chrome extension",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "watchify ./react/index.js -o assets/bundle.js & serve -p 3000"
+    "start": "watchify ./lib/index.js -o assets/bundle.js",
+    "build": "NODE_ENV=production browserify ./lib/index.js | uglifyjs -c -m > assets/bundle.js"
   },
   "browserify": {
     "transform": [
@@ -17,23 +18,14 @@
   "author": "Bobby Sudekum",
   "license": "ISC",
   "dependencies": {
-    "corslite": "0.0.6",
-    "form-serialize": "^0.6.0",
     "gazetteer": "^0.1.4",
-    "jquery-browserify": "^1.8.1",
-    "mapbox-base-css": "https://mapbox-npm.s3.amazonaws.com/package/mapbox-base-css-0.0.1-0da0e3fdcc65a37b6c3a9d1746a0f2f91cfd021a.tgz",
     "mapbox.js": "^2.1.5",
-    "react": "^0.13.1",
-    "react-form-data": "^0.2.2"
+    "react": "^0.13.1"
   },
   "devDependencies": {
     "browserify": "^7.0.3",
-    "budo": "^1.3.1",
     "reactify": "^1.1.0",
-    "serve": "^1.4.0",
-    "tape": "^3.0.3",
     "uglify-js": "^2.4.16",
-    "smash": "0.0.14",
     "watchify": "^2.2.1"
   }
 }
