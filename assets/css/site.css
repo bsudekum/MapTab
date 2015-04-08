@@ -1,128 +1,187 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
+
 #map {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
 }
+
 .vingette {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 10000;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  pointer-events: none;
 }
+
 .info {
-    color: #FFF;
-    text-align: center;
-    width: 100%;
-    height: 80px;
-    position: absolute;
-    top: -400px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
+  color: #FFF;
+  text-align: center;
+  width: 100%;
+  height: 80px;
+  position: absolute;
+  top: -400px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
+
 .shadow1 {
-    text-shadow: 0px 0px 1px #000;
+  text-shadow: 0px 0px 1px #000;
 }
+
 .shadow2 {
-    text-shadow: 0px 0px 1px #000, 0px 0px 2px rgba(0, 0, 0, .5);
+  text-shadow: 0px 0px 1px #000, 0px 0px 2px rgba(0, 0, 0, .5);
 }
+
 .shadow3 {
-    text-shadow: 0px 0px 1px #000, 0px 0px 2px rgba(0, 0, 0, .5), 0px 0px 3px rgba(0, 0, 0, .25);
+  text-shadow: 0px 0px 1px #000, 0px 0px 2px rgba(0, 0, 0, .5), 0px 0px 3px rgba(0, 0, 0, .25);
 }
+
 ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
+
 ul a {
-    float: left;
+  float: left;
 }
+
 .clearfix {
-    zoom: 1;
+  zoom: 1;
 }
+
 .white {
-    color: white;
+  color: white;
 }
+
 .grey {
-    color: #CFCFCF;
+  color: #CFCFCF;
 }
+
 #weather.pill > * {
-    border: none;
-    margin-left: 60px;
+  border: none;
+  margin-left: 60px;
 }
+
 #weather {
-    margin-right: 60px;
+  margin-right: 60px;
 }
+
 .pad5 {
-    padding: 5px;
+  padding: 5px;
 }
+
 .modal {
-    width: 100%;
-    height: 430px;
-    position: absolute;
-    top: -300px;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-    z-index: 1000000;
-    width: 500px;
-    transform: translate(0, -5000px);
-    transition: all .4s;
-    transition-timing-function: ease-in-out;
+  width: 100%;
+  height: 430px;
+  position: absolute;
+  top: -300px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1000000;
+  width: 500px;
+  transform: translate(0, -1000px);
+  transition: all .4s;
+  transition-timing-function: ease-in-out;
 }
+
+.sprocket:hover:before {
+  -webkit-animation: spin 4s linear infinite;
+}
+
 .modal.active {
-    transform: translate(0, 100px);
+  transform: translate(0, 100px);
 }
+
 #show-settings {
-    z-index: 100000;
+  z-index: 100000;
 }
-.leaflet-fade-anim .leaflet-popup, .leaflet-fade-anim .leaflet-tile {
-    transition: opacity .1s linear;
+
+.leaflet-fade-anim .leaflet-popup,
+.leaflet-fade-anim .leaflet-tile {
+  transition: opacity .1s linear;
 }
+
 h1.fancy {
-    font-size: 120px;
+  font-size: 120px;
 }
+
 h2 {
-    font-size: 45px;
+  font-size: 45px;
 }
-.space-right1 {
-    margin-right: 5px;
-}
-#location {
-    font-style: italic;
-    font-weight: lighter;
+h3 {
     font-size: 20px;
 }
-.blue {
-    color: #93CEFF;
+.space-right1 {
+  margin-right: 5px;
 }
+
+#location {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+.blue {
+  color: #93CEFF;
+}
+
 .red {
-    color:#FF9393;
+  color: #FF9393;
 }
 
 .location-icon {
-    background-color: #60A4F0;
-    border-radius: 30px;
-    -webkit-animation: dotPulse 2000ms 0ms infinite;
-    border: 3px solid white;
+  background-color: #60A4F0;
+  border-radius: 30px;
+  -webkit-animation: dotPulse 2000ms 0ms infinite;
+  border: 3px solid white;
 }
+
 @-webkit-keyframes dotPulse {
-    0% {
-        box-shadow:rgba(96, 164, 240, 1) 0px 0px 10px -50px;
-        opacity: 100%;
-    }
-    100% {
-        box-shadow:rgba(96, 164, 240, 0) 0px 0px 0px 35px;
-        opacity: 0%;
-    }
+  0% {
+    box-shadow: rgba(96, 164, 240, 1) 0px 0px 10px -50px;
+    opacity: 100%;
+  }
+  100% {
+    box-shadow: rgba(96, 164, 240, 0) 0px 0px 0px 35px;
+    opacity: 0%;
+  }
+}
+
+.pill span label {
+  border-radius: 0 0 0 0;
+  border: 0 solid white;
+  border-left-width: 1px;
+}
+
+.pill span:first-of-type label {
+  border-radius: 3px 0 0 3px;
+  border-left-width: 0;
+}
+
+.pill span:last-of-type label {
+  border-radius: 0 3px 3px 0;
+}
+
+.pill > * {
+  display: block;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}

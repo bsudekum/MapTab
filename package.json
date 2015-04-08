@@ -1,27 +1,31 @@
 {
   "name": "MapTab",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "A new tab Chrome extension",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "watchify index.js -o assets/site.js & serve",
-    "build": "NODE_ENV=production browserify index.js -o | uglifyjs -c -m > assets/site.js"
+    "start": "watchify ./lib/index.js -o assets/bundle.js",
+    "build": "NODE_ENV=production browserify ./lib/index.js | uglifyjs -c -m > assets/bundle.js"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "reactify"
+      ]
+    ]
   },
   "author": "Bobby Sudekum",
   "license": "ISC",
   "dependencies": {
-    "form-serialize": "^0.6.0",
     "gazetteer": "^0.1.4",
-    "jquery-browserify": "^1.8.1",
-    "mapbox.js": "^2.1.5"
+    "mapbox.js": "^2.1.5",
+    "react": "^0.13.1"
   },
   "devDependencies": {
     "browserify": "^7.0.3",
-    "serve": "^1.4.0",
-    "tape": "^3.0.3",
+    "reactify": "^1.1.0",
     "uglify-js": "^2.4.16",
-    "smash": "0.0.14",
     "watchify": "^2.2.1"
   }
 }
