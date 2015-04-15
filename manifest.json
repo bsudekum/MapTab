@@ -2,8 +2,9 @@
   "name": "MapTab",
   "description": "A tab extension for viewing your current location, date and time.",
   "short_name": "MapTab",
-  "version": "1.0",
+  "version": "1.1",
   "incognito": "split",
+  "offline_enabled": true,
   "chrome_url_overrides": {
     "newtab": "index.html"
   },
@@ -14,9 +15,6 @@
     "<all_urls>",
     "tabs"
   ],
-  "background": {
-    "scripts": ["assets/site.js"]
-  },
   "icons": {
     "16": "assets/images/icon16.png",
     "48": "assets/images/icon48.png",
