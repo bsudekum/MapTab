@@ -1,6 +1,6 @@
 {
   "name": "MapTab",
-  "version": "1.0.1",
+  "version": "1.1.11",
   "description": "A new tab Chrome extension",
   "main": "index.js",
   "scripts": {
