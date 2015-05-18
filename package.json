@@ -20,7 +20,8 @@
   "dependencies": {
     "gazetteer": "^0.1.4",
     "mapbox.js": "^2.1.5",
-    "react": "^0.13.1"
+    "react": "^0.13.1",
+    "react-keybinding": "2.0.0-beta"
   },
   "devDependencies": {
     "babelify": "^6.0.2",
