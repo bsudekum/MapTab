@@ -235,7 +235,7 @@ var Modal = React.createClass({
     });
   },
 
-  handleSubmit: function handleSubmit() {
+  handleSubmit: function handleSubmit(e) {
     var _this2 = this;
 
     e.preventDefault();
@@ -247,7 +247,7 @@ var Modal = React.createClass({
       // race condition
       util.setCookie('settings', null, self.state);
       location.reload();
-    }, 50);
+    }, 200);
   },
 
   handleChangeMap: function handleChangeMap(id) {
@@ -281,6 +281,21 @@ var Modal = React.createClass({
   handleCustomChange: function handleCustomChange(e) {
     this.setState({
       customMapId: e.target.value,
+      disabled: false
+    });
+  },
+
+  handleOnClick: function handleOnClick() {
+    var id = 'customMap';
+    var mapSettings = this.state.mapSettings.map(function (d) {
+      return {
+        id: d.id,
+        checked: d.id === id ? true : false,
+        name: d.name
+      };
+    });
+    this.setState({
+      mapSettings: mapSettings,
       disabled: false
     });
   },
@@ -368,7 +383,7 @@ var Modal = React.createClass({
             ),
             ' mapid'
           ),
-          React.createElement('input', { type: 'text', value: this.state.customMapId, className: 'col6', onChange: this.handleCustomChange, placeholder: 'Custom Map ID' })
+          React.createElement('input', { type: 'text', value: this.state.customMapId, className: 'col6', onChange: this.handleCustomChange, onClick: this.handleOnClick, placeholder: 'Custom Map ID' })
         ),
         React.createElement('input', { type: 'submit', className: 'fl', defaultValue: 'Save Changes', name: '', id: 'save', disabled: this.state.disabled }),
         React.createElement(
