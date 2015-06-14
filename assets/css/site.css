@@ -11,6 +11,17 @@ body {
   width: 100%;
 }
 
+#globe-div {
+  width: 170px;
+  height: 170px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
 .vingette {
   position: absolute;
   top: 0;
