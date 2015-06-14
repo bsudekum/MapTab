@@ -4,4 +4,4 @@
 
 Install via the [Chrome Store](https://chrome.google.com/webstore/detail/maptab/dmabflbokojjfjicmbjjfnmodihciemo)
 
-[![](https://cldup.com/awOTP-fXZ3.gif)](https://chrome.google.com/webstore/detail/maptab/dmabflbokojjfjicmbjjfnmodihciemo)
+[![](http://i.imgur.com/eIyfFMO.gif)](https://chrome.google.com/webstore/detail/maptab/dmabflbokojjfjicmbjjfnmodihciemo)
