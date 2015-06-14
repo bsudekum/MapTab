@@ -37,13 +37,16 @@ var Globe = React.createClass({
     // load the earth plugin
     this.state.planet.loadPlugin(planetaryjs.plugins.earth({
       topojson: { file: 'assets/js/world-110m.json' },
-      oceans: { fill: 'RGBA(20,  39,  54, 0.85)' },
-      land: { fill: 'RGBA(86, 184, 129, 1)' },
-      borders: { stroke: 'RGBA(34,  43,  48, 1)', lineWidth: 0.35, type: 'both' }
+      oceans: { fill: 'RGBA(34, 43, 48, 0.4)' },
+      land: { fill: 'white' },
+      borders: { stroke: 'white' }
     }));
 
     // load the pings plugin
     this.state.planet.loadPlugin(planetaryjs.plugins.pings());
+
+    // load the drag plugin
+    this.state.planet.loadPlugin(planetaryjs.plugins.drag());
 
     var canvas = document.getElementById('globe');
 
@@ -65,7 +68,7 @@ var Globe = React.createClass({
   drawPing: function drawPing() {
     var lon = this.props.location[1];
     var lat = this.props.location[0];
-    this.state.planet.plugins.pings.add(lon, lat, { color: '#E55E5E', ttl: 1100, angle: 10 });
+    this.state.planet.plugins.pings.add(lon, lat, { color: '#3887BE', ttl: 1100, angle: 10 });
   },
 
   updateGlobeRotation: function updateGlobeRotation(lon, lat) {
@@ -80,7 +83,7 @@ var Globe = React.createClass({
     return React.createElement(
       'div',
       { id: 'globe-div' },
-      React.createElement('canvas', { style: { width: '150px', height: '150px' }, id: 'globe', width: '150', height: '150' })
+      React.createElement('canvas', { style: { width: '150px', height: '150px', cursor: 'move' }, id: 'globe', width: '150', height: '150' })
     );
   }
 });
