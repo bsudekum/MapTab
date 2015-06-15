@@ -20,6 +20,7 @@
   "dependencies": {
     "gazetteer": "^0.1.4",
     "mapbox.js": "^2.1.5",
+    "planetary.js": "^1.1.1",
     "react": "^0.13.1",
     "react-keybinding": "2.0.0-beta"
   },
