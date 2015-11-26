@@ -22,6 +22,10 @@ body {
   z-index: 100;
 }
 
+#globe-checkbox-div {
+  margin-top: 25px;
+}
+
 .vingette {
   position: absolute;
   top: 0;
